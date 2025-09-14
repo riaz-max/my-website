@@ -1,20 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>Moon Background</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>বিদ্যালয় তথ্য - নমুনা পেজ</title>
+  <style>
+    :root{
+      --primary:#0b63a8;
+      --accent:#ff6b6b;
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --ribbon1:#ffd166;
+      --ribbon2:#06d6a0;
+      --ribbon3:#ef476f;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Noto Sans Bengali', sans-serif;margin:0;background:var(--bg);color:#111}
+
+    /* Top notice bar */
+    .top-notice{background:var(--primary);color:#fff;padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+    .notice-text{flex:1;white-space:nowrap;overflow:hidden}
+    .notice-text span{display:inline-block;padding-left:100%;animation:marquee 18s linear infinite}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+    .notice-actions{display:flex;gap:.5rem}
+    .notice-btn{background:rgba(255,255,255,0.12);border:none;color:#fff;padding:.35rem .6rem;border-radius:6px;cursor:pointer}
+
+    header{background:linear-gradient(90deg, rgba(11,99,168,0.08), rgba(255,255,255,0));padding:.8rem 1rem}
+    .container{max-width:1100px;margin:0 auto}
+
+    /* Navigation */
+    nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .brand .logo{width:48px;height:48px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .nav-links{display:flex;gap:.5rem}
+    .nav-link{padding:.5rem .8rem;border-radius:8px;text-decoration:none;color:var(--primary);font-weight:600}
+
+    /* Ribbon bar */
+    .ribbons{display:flex;gap:.5rem;margin-top:.8rem}
+    .ribbon{padding:.4rem .7rem;border-radius:999px;font-weight:700;display:inline-block}
+    .ribbon.ribbon-1{background:var(--ribbon1)}
+    .ribbon.ribbon-2{background:var(--ribbon2)}
+    .ribbon.ribbon-3{background:var(--ribbon3)}
+
+    main{padding:1.2rem 1rem}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem;max-width:1100px;margin:0 auto}
+
+    /* Left column */
+    .card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .section-title{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+    .section-title h3{margin:0}
+    .about p{margin:0;color:var(--muted);line-height:1.6}
+
+    /* Notices */
+    .notices-list{display:flex;flex-direction:column;gap:.6rem}
+    .notice-item{padding:.7rem;border-radius:8px;background:linear-gradient(90deg,#fff,#fbfdff);border:1px solid rgba(11,99,168,0.06)}
+    .notice-item small{color:var(--muted)}
+
+    /* Class details */
+    .classes{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+    .class-card{padding:.6rem;border-radius:8px;background:linear-gradient(180deg,#fff,#fcfeff);border:1px solid rgba(0,0,0,0.04)}
+    .class-card h4{margin:.2rem 0}
+
+    /* Committee table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:.55rem .6rem;text-align:left;border-bottom:1px solid #eef2f7}
+    th{background:#fbfdff}
+
+    /* Right column */
+    .side .quick-links{display:flex;flex-direction:column;gap:.5rem}
+    .btn{display:inline-block;padding:.5rem .75rem;border-radius:8px;text-decoration:none;border:1px solid rgba(11,99,168,0.12);background:#fff;color:var(--primary);font-weight:600;text-align:center}
+
+    footer{padding:1rem;text-align:center;color:var(--muted);font-size:.9rem}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .classes{grid-template-columns:1fr}
+      .brand .logo{width:40px;height:40px}
+      .notice-text span{animation-duration:12s}
+    }
+  </style>
 </head>
 <body>
-  <div class="sky">
-    <div class="moon"></div>
-    <div class="gift-box">
-      <div class="lid"></div>
-      <div class="box">
-        <h1>HEY</h1>
-        <p>You shine like the moon! 🌕</p>
-      </div>
+  <!-- Top notice bar -->
+  <div class="top-notice">
+    <div class="notice-text"><span>নোটিশ: আগামী ২০ সেপ্টেম্বর ২০২৫ ইং, বিদ্যালয়ে সমাপনী প্রস্তুতি শ্রেণীর পরীক্ষা অনুষ্ঠিত হবে — সকল শ্রেণির উপস্থিতি অনিবার্য।</span></div>
+    <div class="notice-actions">
+      <button class="notice-btn" onclick="alert('নোটিশ দেখুন সাইডে কিংবা নোটিশ সেকশনে।')">বিস্তারিত</button>
     </div>
   </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">SCL</div>
+          <div>
+            <div style="font-weight:800">k dr y b r s high school</div>
+            <div style="font-size:.85rem;color:var(--muted)">নমুনা শিক্ষা প্রতিষ্ঠান — প্রতিষ্ঠিত ১৯৯৮</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <div class="nav-links" aria-label="primary-navigation">
+            <a class="nav-link" href="#about">পরিচিতি</a>
+            <a class="nav-link" href="#notices">নোটিশ</a>
+            <a class="nav-link" href="#classes">ক্লাস</a>
+            <a class="nav-link" href="#committee">কমিটি</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="ribbons">
+        <span class="ribbon ribbon-1">প্রাপ্তি: ১০০%</span>
+        <span class="ribbon ribbon-2">স্কলারশিপ</span>
+        <span class="ribbon ribbon-3">অ্যাক্রেডিটেড</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- LEFT -->
+      <div>
+        <section id="about" class="card about" style="margin-bottom:1rem">
+          <div class="section-title"><h3>বিদ্যালয়ের পরিচিতি</h3></div>
+          <p>
+            আমাদের বিদ্যালয়টি এলাকার একটি সম্মানিত শিক্ষা প্রতিষ্ঠান। এখানে প্রাথমিক থেকে মাধ্যমিক পর্যায়ের শিক্ষা দেওয়া হয়। শিক্ষার্থীদের সর্বাঙ্গীন উন্নয়ন, সাংস্কৃতিক অনুষ্ঠানের আয়োজন এবং আধুনিক পদ্ধতিতে পড়ানো হয়।
+          </p>
+        </section>
+
+        <section id="notices" class="card" style="margin-bottom:1rem">
+          <div class="section-title"><h3>সাম্প্রতিক নোটিশ</h3></div>
+          <div class="notices-list">
+            <div class="notice-item">
+              <strong>পরীক্ষার সময়সূচি প্রকাশ</strong>
+              <div><small>প্রকাশিত: ০৯ সেপ্টেম্বর ২০২৫</small></div>
+              <div style="margin-top:.4rem;color:var(--muted)">সমাপনী প্রস্তুতি — সময়সূচি ও কক্ষ তালিকা অফিস থেকে সংগ্রহ করুন।</div>
+            </div>
+
+            <div class="notice-item">
+              <strong>বছরের ছুটির ঘোষণা</strong>
+              <div><small>প্রকাশিত: ০৫ সেপ্টেম্বর ২০২৫</small></div>
+              <div style="margin-top:.4rem;color:var(--muted)">ঈদ উপলক্ষে বিদ্যালয় আগামী ১০-১২ সেপ্টেম্বর বন্ধ থাকবে।</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="classes" class="card" style="margin-bottom:1rem">
+          <div class="section-title"><h3>ক্লাস বিবরণ</h3></div>
+          <div class="classes">
+            <div class="class-card">
+              <h4>প্রাথমিক</h4>
+              <div>শ্রেণি: ১-৫</div>
+              <div>শিক্ষক সংখ্যা: ১২</div>
+            </div>
+            <div class="class-card">
+              <h4>মাধ্যমিক</h4>
+              <div>শ্রেণি: ৬-১০</div>
+              <div>শিক্ষক সংখ্যা: ১৫</div>
+            </div>
+            <div class="class-card">
+              <h4>অ্যাকাডেমিক সময়</h4>
+              <div>সকাল 10:00 — 1:00</div>
+              <div>ব্রেক: 2:00 — 3:00</div>
+            </div>
+            <div class="class-card">
+              <h4>বিভাগ</h4>
+              <div> বিজ্ঞান, বাণিজ্য, মানবিক</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="committee" class="card">
+          <div class="section-title"><h3>পরিচালনা কমিটি</h3></div>
+          <div style="overflow:auto">
+            <table>
+              <thead>
+                <tr><th>পদ</th><th>নাম</th><th>দায়িত্ব</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>চেয়ারম্যান</td><td>মোঃ হায়দার আলী</td><td>অর্থ ও পরিকল্পনা</td></tr>
+                <tr><td>সাধারণ সম্পাদক</td><td>মীনা বেগম</td><td>অফিসিয়াল কাজ</td></tr>
+                <tr><td>প্রধান শিক্ষক</td><td>মঈনুল ইসলাম</td><td>শিক্ষা তত্ত্বাবধান</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="side">
+        <div class="card" style="margin-bottom:1rem">
+          <div class="section-title"><h3>দ্রুত লিংক</h3></div>
+          <div class="quick-links">
+            <a class="btn" href="#notices">নোটিশ দেখুন</a>
+            <a class="btn" href="#classes">ক্লাস সময়সূচি</a>
+            <a class="btn" href="#committee">কমিটি তালিকা</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title"><h3>যোগাযোগ</h3></div>
+          <p style="margin:0;color:var(--muted)">ঠিকানা: কালাউযান, জেলা নাম<br>ফোন: 01XXXXXXXXX<br>ইমেইল: info@example.com</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © ২০২৫ k dr y b r s high school — সকল অধিকার সংরক্ষিত
+  </footer>
+
+  <script>
+    // ছোট কিছু ইন্টারঅ্যাকশন — নোটিশ ক্লিক ইত্যাদি
+    document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = a.getAttribute('href');
+      document.querySelector(id).scrollIntoView({behavior:'smooth'});
+    }));
+  </script>
 </body>
 </html>
